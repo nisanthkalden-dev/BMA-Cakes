@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMA CAKES | Premium Homemade Cakes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="loader-content">
+      <div class="cake-icon"><i class="fas fa-birthday-cake"></i></div>
+      <p>BMA CAKES</p>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <i class="fas fa-birthday-cake"></i>
+        <span>BMA CAKES</span>
+      </a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="navMenu">
+        <a href="#home" class="active">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="cart-btn" id="cartBtn" title="View Cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-particles" id="heroParticles"></div>
+    <div class="hero-content">
+      <span class="hero-badge">Freshly Baked with Love</span>
+      <h1>BMA <span class="highlight">CAKES</span></h1>
+      <p class="hero-subtitle">Premium homemade cakes & desserts crafted with the finest ingredients for your special moments</p>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#menu">
+          <i class="fas fa-utensils"></i> Explore Menu
+        </a>
+        <a class="btn btn-outline" onclick="orderWhatsApp('Hello! I would like to place an order')">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-target="500">0</span>+
+          <span class="stat-label">Happy Customers</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-target="50">0</span>+
+          <span class="stat-label">Cake Varieties</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-target="5">0</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll Down</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features-strip">
+    <div class="feature">
+      <i class="fas fa-leaf"></i>
+      <div>
+        <h4>Fresh Ingredients</h4>
+        <p>100% natural & premium</p>
+      </div>
+    </div>
+    <div class="feature">
+      <i class="fas fa-truck"></i>
+      <div>
+        <h4>Free Delivery</h4>
+        <p>On orders above Rs.500</p>
+      </div>
+    </div>
+    <div class="feature">
+      <i class="fas fa-heart"></i>
+      <div>
+        <h4>Made with Love</h4>
+        <p>Handcrafted perfection</p>
+      </div>
+    </div>
+    <div class="feature">
+      <i class="fas fa-award"></i>
+      <div>
+        <h4>Best Quality</h4>
+        <p>Hygiene guaranteed</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu" class="section">
+    <div class="section-header">
+      <span class="section-tag">Delicious Options</span>
+      <h2>Our Cake <span class="highlight">Menu</span></h2>
+      <p class="section-desc">Handcrafted with love, each cake is a masterpiece of flavor and artistry</p>
+    </div>
+
+    <!-- Category Filter -->
+    <div class="category-filter">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="classic">Classic</button>
+      <button class="filter-btn" data-filter="premium">Premium</button>
+      <button class="filter-btn" data-filter="custom">Custom</button>
+    </div>
+
+    <div id="cakeList" class="menu-grid"></div>
+
+    <div id="toast" class="toast"></div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="section section-dark">
+    <div class="section-header">
+      <span class="section-tag">Our Creations</span>
+      <h2>Signature <span class="highlight">Cakes</span></h2>
+      <p class="section-desc">A showcase of our best-selling handcrafted cakes</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" data-aos="fade-up">
+        <img src="images/Screenshot 2026-06-04 114213.png" alt="Chocolate Cake">
+        <div class="gallery-overlay">
+          <h3>Chocolate Delight</h3>
+          <p>Rich and creamy chocolate layers</p>
+          <button onclick="orderWhatsApp('I want to order Chocolate Delight cake')"><i class="fab fa-whatsapp"></i> Order</button>
+        </div>
+      </div>
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+        <img src="images/Screenshot 2026-06-04 114317.png" alt="Red Velvet">
+        <div class="gallery-overlay">
+          <h3>Red Velvet</h3>
+          <p>Soft, smooth & classic flavor</p>
+          <button onclick="orderWhatsApp('I want to order Red Velvet cake')"><i class="fab fa-whatsapp"></i> Order</button>
+        </div>
+      </div>
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+        <img src="images/Screenshot 2026-06-04 114254.png" alt="KitKat Cake">
+        <div class="gallery-overlay">
+          <h3>KitKat Cake</h3>
+          <p>Crunchy KitKat layers with rich cream</p>
+          <button onclick="orderWhatsApp('I want to order KitKat Cake')"><i class="fab fa-whatsapp"></i> Order</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="section-header">
+      <span class="section-tag">Our Story</span>
+      <h2>About <span class="highlight">BMA Cakes</span></h2>
+    </div>
+    <div class="about-content">
+      <div class="about-image">
+        <img src="images/mae-mu-rgRbqFweGF0-unsplash.jpg" alt="BMA Cakes">
+        <div class="experience-badge">
+          <span class="exp-num">5+</span>
+          <span>Years of Excellence</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <h3>Baking Happiness Since 2021</h3>
+        <p>We are a passionate home bakery focused on delivering fresh, hygienic, and delicious baked goods. Every item is handcrafted using high-quality ingredients with zero compromise on taste and quality.</p>
+        <p>From birthdays to weddings, our cakes make every occasion unforgettable. We believe that great cakes don't just taste good - they create memories.</p>
+        <div class="about-highlights">
+          <div class="about-highlight">
+            <i class="fas fa-check-circle"></i>
+            <span>100% Eggless Options Available</span>
+          </div>
+          <div class="about-highlight">
+            <i class="fas fa-check-circle"></i>
+            <span>Custom Designs & Themes</span>
+          </div>
+          <div class="about-highlight">
+            <i class="fas fa-check-circle"></i>
+            <span>Premium Quality Ingredients</span>
+          </div>
+          <div class="about-highlight">
+            <i class="fas fa-check-circle"></i>
+            <span>Same Day Delivery Available</span>
+          </div>
+        </div>
+        <a class="btn btn-primary" onclick="orderWhatsApp('Hello! I want to know more about BMA Cakes')">
+          <i class="fab fa-whatsapp"></i> Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOM ORDER -->
+  <section class="custom-order-section">
+    <div class="custom-order-content">
+      <h2>Want a <span class="highlight">Custom Cake?</span></h2>
+      <p>Tell us your dream cake design and we'll make it real! From themed cakes to photo cakes - we do it all.</p>
+      <a class="btn btn-primary btn-lg" onclick="orderWhatsApp('Hi! I want to order a custom cake. Here are the details:')">
+        <i class="fab fa-whatsapp"></i> Design Your Cake
+      </a>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="section section-dark">
+    <div class="section-header">
+      <span class="section-tag">What People Say</span>
+      <h2>Customer <span class="highlight">Reviews</span></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p>"The chocolate cake was absolutely divine! Best homemade cake I've ever tasted. Will definitely order again."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">P</div>
+          <div>
+            <strong>Priya M.</strong>
+            <span>Regular Customer</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p>"Ordered a custom cake for my daughter's birthday. The design was perfect and the taste was amazing! Highly recommend BMA Cakes."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">R</div>
+          <div>
+            <strong>Rajesh K.</strong>
+            <span>Birthday Order</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+        </div>
+        <p>"Fresh ingredients, beautiful presentation, and timely delivery. BMA Cakes never disappoints. My go-to for every celebration!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">S</div>
+          <div>
+            <strong>Sneha R.</strong>
+            <span>Wedding Order</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="section-header">
+      <span class="section-tag">Get in Touch</span>
+      <h2>Contact <span class="highlight">Us</span></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <i class="fas fa-phone-alt"></i>
+        <h3>Call Us</h3>
+        <p>+91 9342440948</p>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Visit Us</h3>
+        <p>Muttom, Tamil Nadu, India</p>
+      </div>
+      <div class="contact-card">
+        <i class="fab fa-whatsapp"></i>
+        <h3>WhatsApp</h3>
+        <p>Quick Order & Chat</p>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-clock"></i>
+        <h3>Working Hours</h3>
+        <p>Mon - Sun: 8AM - 9PM</p>
+      </div>
+    </div>
+    <div class="contact-cta">
+      <a class="btn btn-primary btn-lg" onclick="orderWhatsApp('Hello! I want to order from BMA Cakes')">
+        <i class="fab fa-whatsapp"></i> Order on WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3><i class="fas fa-birthday-cake"></i> BMA CAKES</h3>
+        <p>Baking happiness, one cake at a time.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/bma_cakes/" target="_blank"  title="Instagram"><i class="fab fa-instagram"></i></a>
+          <!-- <a href="https://www.facebook.com/bma-cakes" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a> -->
+          <a href="#" title="WhatsApp" onclick="orderWhatsApp('Hello!')"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-links">
+        <h4>Our Cakes</h4>
+        <a href="#menu">Chocolate Cakes</a>
+        <a href="#menu">Fruit Cakes</a>
+        <a href="#menu">Custom Cakes</a>
+        <a href="#menu">Birthday Cakes</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 BMA CAKES. All rights reserved.</p>
+      <a href="admin.html" class="admin-link">Admin Panel</a>
+    </div>
+  </footer>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+      <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <i class="fas fa-shopping-basket"></i>
+        <p>Your cart is empty</p>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cartTotal">&#8377;0</span>
+      </div>
+      <button class="btn btn-primary btn-block" id="checkoutBtn">
+        <i class="fab fa-whatsapp"></i> Order via WhatsApp
+      </button>
+      <button class="btn btn-outline btn-block" id="clearCartBtn">
+        <i class="fas fa-trash"></i> Clear Cart
+      </button>
+    </div>
+  </div>
+
+  <!-- CAKE DETAIL POPUP -->
+  <div class="cake-popup-overlay" id="cakePopupOverlay">
+    <div class="cake-popup" id="cakePopup">
+      <button class="cake-popup-close" id="cakePopupClose"><i class="fas fa-times"></i></button>
+      <div class="cake-popup-image" id="cakePopupImage"></div>
+      <div class="cake-popup-details">
+        <span class="cake-popup-category" id="cakePopupCategory">Classic</span>
+        <h2 id="cakePopupName">Cake Name</h2>
+        <p class="cake-popup-desc" id="cakePopupDesc">Description</p>
+        <div class="cake-popup-price" id="cakePopupPrice">&#8377;0</div>
+        <div class="cake-popup-actions">
+          <button class="btn btn-primary" id="cakePopupCart">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+          </button>
+          <button class="btn btn-outline cake-popup-whatsapp" id="cakePopupOrder">
+            <i class="fab fa-whatsapp"></i> Order Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" title="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- FLOATING WHATSAPP -->
+  <a class="whatsapp-float" onclick="orderWhatsApp('Hello! I want to order from BMA Cakes')" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- FIREBASE -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+
+  <script src="firebase.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
